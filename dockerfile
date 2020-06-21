@@ -3,6 +3,8 @@ FROM golang:alpine3.12 as builder
 RUN mkdir /app
 RUN chmod 700 /app
 
+RUN go get -u go.mongodb.org/mongo-driver
+
 COPY . /app
 
 # import golang packages to be used inside image "scratch"
